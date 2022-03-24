@@ -1,9 +1,9 @@
 # Disaster Response Pipeline Project
 
-##Project Description:
+## Project Description:
 In this project, a pipeline for data transformation with machine learning was developed. This pipeline was capable of filtering message. The pipeline will eventually be turned into a flask app. A web app is included in the project, which allows an emergency worker to enter a new message and receive classification results in different categories. The webapp's landing page also provides plotly-created visualizations of the training dataset.
 
-##File Descriotions:
+## File Descriotions:
 The following files are included in the project:
 data/process data.py: This file contains the extract, transform, and load processes for preparing data for model construction.
 data/disaster_categories.csv and data/disaster_messages.csv: these files contains data 
