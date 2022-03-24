@@ -81,7 +81,7 @@ def main():
 
         print('Cleaning data...')
         df = clean_data(df)
-        print(df.related.value_counts())
+        # print(df.related.value_counts())
         print('Saving data...\n    DATABASE: {}'.format(database_filepath))
         save_data(df, database_filepath)
         
