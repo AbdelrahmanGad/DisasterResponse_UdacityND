@@ -49,12 +49,13 @@ def clean_data(df):
     for column in categories:
         # set each value to be the last character of the string
         categories[column] = categories[column].apply(split_name, args=(1, '-', ))
-    # convert column from string to numeric
-    categories[column] = categories[column].astype('int')
+        # convert column from string to numeric
+        categories[column] = categories[column].astype('int')
     # drop the original categories column from `df`
     df.drop("categories", axis='columns', inplace=True)
     # concatenate the original dataframe with the new `categories` dataframe
     df = pd.concat([df, categories], axis=1)
+    df.related = df.related.replace(2, 1)
     # drop duplicates
     df.drop_duplicates(inplace=True)
     return df
@@ -80,7 +81,7 @@ def main():
 
         print('Cleaning data...')
         df = clean_data(df)
-        
+        print(df.related.value_counts())
         print('Saving data...\n    DATABASE: {}'.format(database_filepath))
         save_data(df, database_filepath)
         
